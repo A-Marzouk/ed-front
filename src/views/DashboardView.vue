@@ -1,16 +1,9 @@
-<template>
-  <div class="about">
-    <h1>This is the dashboard view</h1>
-    <RouterLink to="/">Home</RouterLink>
-  </div>
-</template>
+<script setup lang="ts">
+import {RouterView } from 'vue-router'
+</script>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<template>
+ <div>
+   main dashboard view
+ </div>
+</template>

@@ -8,7 +8,7 @@ defineProps<{
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      Created by <a href="ahmedmarzouk.net" target="_blank">Ahmed Marzouk</a> using Vue 3 and TailwindCSS in the frontend, PHP/Laravel and MySQL in the backend.
+      Created by <a href="ahmedmarzouk.net" target="_blank">Ahmed Marzouk</a> using Vue 3, Flowbite and TailwindCSS in the frontend, PHP/Laravel and MySQL in the backend.
     </h3>
   </div>
 </template>

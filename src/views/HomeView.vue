@@ -5,6 +5,7 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
+  <div class="page-wrapper">
     <div class="flex gap-12">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
@@ -12,8 +13,9 @@ import { RouterLink } from 'vue-router'
         <Greeting msg="Welcome to your Educational Dashboard!" />
 
         <nav class="mt-8">
-          <RouterLink to="/dashboard" class="p-2" style="border: 0.5px lightgreen solid;">Dashboard</RouterLink>
+          <RouterLink to="/dashboard" class="px-6 py-2 hover:bg-green-400 hover:text-white" style="border: 0.5px lightgreen solid;">Dashboard</RouterLink>
         </nav>
       </div>
     </div>
+  </div>
 </template>

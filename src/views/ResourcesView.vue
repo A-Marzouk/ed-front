@@ -29,14 +29,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="!loading">
-    <div class="mb-8 mt-8 text-gray-800 text-2xl">
-      Resources table
-    </div>
+  <div class="page-wrapper">
+    <div v-if="!loading"  class="w-full">
+      <div class="mb-8 mt-8 text-gray-800 text-2xl">
+        Resources list
+      </div>
 
-    <DataTable :tableData="data"/>
-  </div>
-  <div v-else>
-    Loading...
+      <DataTable :tableData="data"/>
+    </div>
+    <div v-else>
+      Loading...
+    </div>
   </div>
 </template>

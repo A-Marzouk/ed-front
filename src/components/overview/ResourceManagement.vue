@@ -13,7 +13,7 @@ const fetchData = async () => {
   loading.value = true;
 
   try {
-    const response = await axios.get('http://127.0.0.1:8000/api/students');
+    const response = await axios.get('http://127.0.0.1:8000/api/resources/management');
     data.value = response.data;
   } catch (err) {
     error.value = 'Error fetching data';
@@ -29,16 +29,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="page-wrapper">
-    <div v-if="!loading" class="w-full">
-      <div class="mb-8 mt-8 text-gray-800 text-2xl">
-        Students list
-      </div>
+  <div v-if="!loading" class="w-full">
+    <div class="mb-8 mt-8 text-gray-800 text-2xl">
+     Resource Management
+    </div>
 
-      <DataTable :tableData="data"/>
-    </div>
-    <div v-else>
-      Loading...
-    </div>
+    <DataTable :tableData="data"/>
+  </div>
+  <div v-else>
+    Loading...
   </div>
 </template>

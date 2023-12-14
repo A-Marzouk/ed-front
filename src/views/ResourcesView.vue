@@ -3,6 +3,7 @@ import DataTable from "@/components/DataTable.vue";
 import {inject, onMounted, ref} from "vue";
 
 const axios: any = inject('axios')
+const api_url = import.meta.env.VITE_API_URL;
 
 /* Fetching teacher data */
 const data = ref({});
@@ -13,7 +14,7 @@ const fetchData = async () => {
   loading.value = true;
 
   try {
-    const response = await axios.get('http://127.0.0.1:8000/api/resources');
+    const response = await axios.get(api_url + '/api/resources');
     data.value = response.data;
   } catch (err) {
     error.value = 'Error fetching data';

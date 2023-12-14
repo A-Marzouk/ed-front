@@ -30,6 +30,9 @@ const preferred_view_method = ref("charts");
          <label for="bordered-radio-2" class="w-full py-4 ms-2 pr-4 text-sm font-medium text-gray-900 dark:text-gray-300">Tables</label>
        </div>
      </div>
+     <div class="text-base mb-3 mt-12 text-left" v-if="preferred_view_method === 'charts'">
+       Charts are not loading as expected? My bad, please refresh the page :)
+     </div>
    </div>
 
    <TeachersActivity :preferred_view_method="preferred_view_method" />

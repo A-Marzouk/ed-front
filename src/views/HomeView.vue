@@ -13,7 +13,7 @@ import { RouterLink } from 'vue-router'
         <Greeting msg="Welcome to your Educational Dashboard!" />
 
         <nav class="mt-8">
-          <RouterLink to="/dashboard" class="px-6 py-2 hover:bg-green-400 hover:text-white" style="border: 0.5px lightgreen solid;">Dashboard</RouterLink>
+          <a href="/dashboard" class="px-6 py-2 hover:bg-green-400 hover:text-white" style="border: 0.5px lightgreen solid;">Dashboard</a>
         </nav>
       </div>
     </div>

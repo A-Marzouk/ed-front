@@ -52,7 +52,6 @@ const series = computed(() => {
   }
 });
 
-console.log({series});
 
 onMounted(() => {
 

@@ -53,8 +53,6 @@ const series = computed(() => {
   }
 });
 
-console.log({series});
-
 onMounted(() => {
 
   const options = {

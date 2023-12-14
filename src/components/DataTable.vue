@@ -29,7 +29,7 @@ import {computed, defineProps} from "vue";
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3 capitalize" v-for="column in columns" :key="column">
-          {{column.replaceAll('_', ' ')}}
+          {{column.split('_').join(' ')}}
         </th>
       </tr>
       </thead>

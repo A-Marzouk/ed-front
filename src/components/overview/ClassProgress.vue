@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import DataTable from "@/components/DataTable.vue";
-import {inject, onMounted, ref} from "vue";
+import {defineProps, inject, onMounted, ref} from "vue";
+import ClassProgressChart from "@/components/charts/ClassProgressChart.vue";
+
+defineProps({
+  preferred_view_method: {
+    required: false,
+    default: 'charts'
+  }
+});
 
 const axios: any = inject('axios')
 
@@ -29,14 +37,18 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="!loading" class="w-full">
+  <div v-if="!loading" class="w-full">
+    <ClassProgressChart class="mt-12" v-show="preferred_view_method === 'charts'" :progress_data="data"/>
+
+    <div v-show="preferred_view_method === 'tables'">
       <div class="mb-8 mt-8 text-gray-800 text-2xl">
         Class Progress (Overall Student Progress)
       </div>
 
       <DataTable :tableData="data"/>
     </div>
-    <div v-else>
-      Loading...
-    </div>
+  </div>
+  <div v-else>
+    Loading...
+  </div>
 </template>

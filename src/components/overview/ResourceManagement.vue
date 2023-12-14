@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import DataTable from "@/components/DataTable.vue";
-import {inject, onMounted, ref} from "vue";
+import {defineProps, inject, onMounted, ref} from "vue";
+import ResourceManagementChart from "@/components/charts/ResourceManagementChart.vue";
+
+defineProps({
+  preferred_view_method: {
+    required: false,
+    default: 'charts'
+  }
+});
 
 const axios: any = inject('axios')
 
@@ -30,11 +38,15 @@ onMounted(() => {
 
 <template>
   <div v-if="!loading" class="w-full">
-    <div class="mb-8 mt-8 text-gray-800 text-2xl">
-     Resource Management
-    </div>
+    <ResourceManagementChart class="mt-12" v-show="preferred_view_method === 'charts'" :resource_data="data"/>
 
-    <DataTable :tableData="data"/>
+    <div v-show="preferred_view_method === 'tables'">
+      <div class="mb-8 mt-8 text-gray-800 text-2xl">
+        Resource Management
+      </div>
+
+      <DataTable :tableData="data"/>
+    </div>
   </div>
   <div v-else>
     Loading...
